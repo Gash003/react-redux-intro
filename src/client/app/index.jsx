@@ -1,10 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
 
-class App extends React.Component {
-  render () {
-    return <p> Hello React!</p>;
-  }
-}
+import Home from './home/home';
+import MainLayout from './mainLayout/mainLayout';
+import SearchLayout from './searchLayout/searchLayout';
+import UserList from './userList/userList';
 
-render(<App/>, document.getElementById('app'));
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path="/" component={Home} />
+    <Route path="/main" component={MainLayout} />
+  </Router>
+), document.getElementById('app'));
