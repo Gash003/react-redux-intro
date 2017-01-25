@@ -3,7 +3,10 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'public'), {
+const publicPath = path.join(__dirname, '..', 'client', 'public');
+const indexFile = path.resolve(__dirname, '..', 'client', 'index.html');
+
+app.use(express.static(publicPath, {
   dotfiles: 'ignore',
   index: false
 }));
@@ -11,8 +14,7 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'public'), {
 
 app.get('*', function(req, res, next) {
   console.log('Request: [GET]', req.originalUrl);
-
-  res.sendFile(path.resolve(__dirname, '..', 'client', 'index.html'));
+  res.sendFile(indexFile);
 });
 
 
