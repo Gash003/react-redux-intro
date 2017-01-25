@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "http-server ./src/client -o -c-1"
+    "start": "node src/server/server.js"
   },
   "author": "Maciej Pawluk",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "url": "git+https://github.com/Gash003/react-redux-intro.git"
   },
   "dependencies": {
+    "express": "^4.14.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 //Layouts
 import MainLayout from './components/layouts/mainLayout';
@@ -11,7 +11,7 @@ import UserList from './components/pages/userList';
 import WidgetList from './components/pages/widgetList';
 
 export default (
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
         <Route path="/" component={MainLayout}>
         <IndexRoute component={Home} />
         <Route component={SearchLayout} >
