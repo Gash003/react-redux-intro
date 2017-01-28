@@ -12,9 +12,12 @@ const UserList = React.createClass({
     createListItem(item) {
         return (
             <li key={item.id.toString()}>
-                <Link to={`/users/${item.id}`}>
+                <div>
                     {item.name}
-                </Link>
+                    <button onClick={this.props.deleteUser.bind(null, item.id)}>
+                        X
+                    </button>
+                </div>
             </li>
         );
     }
