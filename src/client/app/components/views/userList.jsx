@@ -1,13 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const UserList = React.createClass({
     render() {
         return (
             <ul className="user-list">
-                <li>Dan</li>
-                <li>Ryan</li>
-                <li>Michael</li>
+                {this.props.users.map(this.createListItem)}
             </ul>
+        );
+    },
+    createListItem(item) {
+        return (
+            <li key={item.id.toString()}>
+                <Link to={`/users/${item.id}`}>
+                    {item.name}
+                </Link>
+            </li>
         );
     }
 });

@@ -3,7 +3,6 @@ import axios from'axios';
 
 import WidgetList from '../views/widgetList';
 
-
 const WidgetListContainer = React.createClass({
     getInitialState() {
         return {
@@ -21,6 +20,5 @@ const WidgetListContainer = React.createClass({
         );
     }
 });
-
 
 export default WidgetListContainer;
